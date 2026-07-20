@@ -23,7 +23,7 @@ ARG REPO_NAME_TOOLS=mysql-tools-9.7-lts-community
 RUN /usr/sbin/groupadd -g 999 -r mysqlrouter >/dev/null \
   && /usr/sbin/useradd -M -N -u 999 -g mysqlrouter -r -d /var/lib/mysqlrouter -s /bin/false \
       -c "MySQL Router" mysqlrouter \
-  && rpm -U https://repo.mysql.oraclecorp.com/mysql-uat/repos-stage/$CONFIG_PACKAGE_NAME \
+  && rpm -U https://repo.mysql.com/$CONFIG_PACKAGE_NAME \
   && microdnf install -y \
      --enablerepo=mysql-9.7-lts-community $MYSQL_CLIENT_PACKAGE \
   && microdnf install -y --disablerepo=\* \
